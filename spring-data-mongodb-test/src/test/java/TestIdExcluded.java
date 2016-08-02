@@ -5,6 +5,7 @@ import org.junit.rules.ExpectedException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
 /**
@@ -28,6 +29,7 @@ public class TestIdExcluded {
         employee.setDepartment(department);
 
         mongoTemplate.insert(employee, collectionName);
+
         System.out.println("insert employee");
 
     }
