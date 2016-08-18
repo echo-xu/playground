@@ -22,11 +22,11 @@ public class TestLegacyData {
         System.out.println("insert employee");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test//(expected = IllegalArgumentException.class)
     public void testLegacyData() {
         Query query = new Query();
         Employee employee = mongoTemplate.findOne(query, Employee.class, collectionName);
-        System.out.println("_id: " + employee.getId() + ", name: " + employee.getName());
+        System.out.println("testLegacyData _id: " + employee.getId() + ", name: " + employee.getName());
     }
 
     @AfterClass

@@ -13,7 +13,8 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
-            <version>1.9.2.RELEASE</version>
+            <!--<version>1.9.2.RELEASE</version>-->
+            <version>1.9.3.BUILD-SNAPSHOT</version> <!-- https://jira.spring.io/browse/DATAMONGO-1471 -->
         </dependency>
 
         <dependency>
@@ -24,5 +25,16 @@
 
 
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

@@ -34,23 +34,23 @@ public class TestIdExcluded {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test//(expected = IllegalArgumentException.class)
     public void testIdExcluded() {
         Query query = new Query();
         query.fields().exclude("_id");
         Employee employee = mongoTemplate.findOne(query, Employee.class, collectionName);
 
-        System.out.println("_id: " + employee.getId() + ", name: " + employee.getName());
+        System.out.println("testIdExcluded _id: " + employee.getId() + ", name: " + employee.getName());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test//(expected = IllegalArgumentException.class)
     public void testInnerIdNotIncluded() {
 
         Query query = new Query();
         query.fields().include("department.name");
         Employee employee = mongoTemplate.findOne(query, Employee.class, collectionName);
 
-        System.out.println("_id: " + employee.getId() + ", name: " + employee.getName());
+        System.out.println("testInnerIdNotIncluded _id: " + employee.getId() + ", name: " + employee.getName());
 
     }
 
